@@ -1,0 +1,15 @@
+body{
+background: rgb(0,0,0);
+background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8407738095238095) 35%);
+
+font-size:20px;
+font-family:verdana;
+color:white; 
+}
+
+a {
+		color:Red;
+}
+h1, a {
+		font-size:2em;
+}
