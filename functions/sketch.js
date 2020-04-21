@@ -18,15 +18,9 @@ function preload(){
 }
 
 //location variables
-var cathyX= 100;
-var cathyY= 200;
 
-var rexX= 800;
-var rexY= 200;
 
 var treeX=50;
-
-var story = "Two friends, A cat named cathy :3 and a dog named rex."
 
 //forest,bush,sky
 var currentSetting = "forest";
@@ -48,14 +42,23 @@ function draw(){
 		image(forest, 600,400);
 		image(forest, 800,400);
 		image(forest, 1000,400);
+		cathy(100,height*2/3);
+		rex(800,height*2/3);
+		story("Two friends, A cat named cathy :3 and a dog named rex.");
 	} else if (currentSetting == "bush"){
 		background("#C264FF");
 		image(bush, 200,400);
 		image(bush, 700, 400);
 		image(bush, 1000, 400);
+		cathy(200,height*2/3);
+		rex(500,height*2/3);
+		story("Cathy and Rex run through the forest.");
 	} else if (currentSetting == "sky"){
 		background('#00C9E5');
 		image(cloud, 100, 200);
+		cathy(100,height*2/3);
+		rex(800,height*2/3);
+		story("Two friends, A cat named cathy :3 and a dog named rex.");
 
 
 		}
@@ -66,21 +69,26 @@ function draw(){
 
 /* character functions */
 function cathy(x,y) {
-	image()
+	image(cathy, cathyX,cathyY);
+}
+
+function rex(x,y) {
+	image(rex, rexX, rexY);
+
 }
 
 
 
 //draw characters
-	image(cathy, cathyX,cathyY);
-	image(rex, rexX, rexY);
-
-	//narration
+	
+function narration(story){
 	textSize(30);
 	textAlign(CENTER,CENTER);
 	text(story, width/4, 20, width/2);
-
-	// instructions
+}
+	
+	
+function instructions(){
 	textSize(18);
 	fill('white');
 	// text("Click to go to the next scene", width - 100, height - 70, 100);
