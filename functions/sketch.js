@@ -3,15 +3,15 @@
 	2.10.2020
 */
 
-var cathy;
-var rex;
+var cathyImage;
+var rexImage;
 var forest;
 var bush; 
 var cloud;
 
 function preload(){
-	cathy = loadImage('cathy.png');
-	rex = loadImage('rex.png');
+	cathyImage = loadImage('cathy.png');
+	rexImage = loadImage('rex.png');
 	forest= loadImage('Tree.png')
 	bush= loadImage('Bush.png')
 	cloud= loadImage('Cloud.png')
@@ -20,15 +20,12 @@ function preload(){
 //location variables
 
 
-var treeX=50;
-
 //forest,bush,sky
 var currentSetting = "forest";
 
 function setup(){
 	createCanvas(windowWidth, windowHeight);
-	cathyY = height * 2/3
-	rexY = height * 2/3
+	
 
 	}
 
@@ -44,7 +41,7 @@ function draw(){
 		image(forest, 1000,400);
 		cathy(100,height*2/3);
 		rex(800,height*2/3);
-		story("Two friends, A cat named cathy :3 and a dog named rex.");
+		narration("Two friends, A cat named cathy :3 and a dog named rex.");
 	} else if (currentSetting == "bush"){
 		background("#C264FF");
 		image(bush, 200,400);
@@ -52,13 +49,13 @@ function draw(){
 		image(bush, 1000, 400);
 		cathy(200,height*2/3);
 		rex(500,height*2/3);
-		story("Cathy and Rex run through the forest.");
+		narration("Cathy and Rex run through the forest.");
 	} else if (currentSetting == "sky"){
 		background('#00C9E5');
 		image(cloud, 100, 200);
-		cathy(100,height*2/3);
+		cathy(600,height*2/3);
 		rex(800,height*2/3);
-		story("Two friends, A cat named cathy :3 and a dog named rex.");
+		narration("cathy and rex armor enchant into the sky");
 
 
 		}
@@ -69,11 +66,11 @@ function draw(){
 
 /* character functions */
 function cathy(x,y) {
-	image(cathy, cathyX,cathyY);
+	image(cathyImage, x,y);
 }
 
 function rex(x,y) {
-	image(rex, rexX, rexY);
+	image(rexImage, x, y);
 
 }
 
@@ -113,25 +110,13 @@ function keyPressed() {
 			// change setting
 			currentSetting = "bush";
 
-			// update story
-			story = "cathy and rex run through forest";
-
-			// update characters position
-			cathyX = 200;
-			rexX = 500;
 
 		} else if (currentSetting == "bush") {
 			currentSetting = "sky";
-			story = "cathy and rex armor enchant into the sky";
-
-			jennyX = 600;
 
 		} else if (currentSetting == "sky") {
 			currentSetting = "forest";
-			story = "Two friends, A cat named cathy :3 and a dog named rex.";
-
-			cathyX = 100;
-			rexX = 300;
+			
 		}
 	}
 }
