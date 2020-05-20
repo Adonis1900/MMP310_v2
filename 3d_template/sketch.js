@@ -23,10 +23,26 @@ function setup() {
 function draw() {
 	background(51);
 
+	//noStroke();
+	//lights();
+	
+	
+	//applies evenly to all surfaces
+	ambientLight(40,60,90)
+
+	//direction -1 to 1
+	directionalLight(255,255,255, 1, 0, 0)
+
+	pointLight(255,255,255, mouseX - width/2, mouseY - height/2, 150);
+
+	fill('tan')
+
 	// floor 
 	push();
+	fill('blue')
 	translate(0, 300);
 	rotateX(PI * 0.5); 
+	background('black')
 	plane(1000, 1000);
 	pop();
 
@@ -35,6 +51,7 @@ function draw() {
 	rotateZ(rotZ.value());
 
 	sphere(100);
+
 
 
 	push();
