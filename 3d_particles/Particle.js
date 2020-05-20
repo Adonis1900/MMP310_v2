@@ -35,10 +35,23 @@ class Particle {
 
 		// start composition
 
+	ambientMaterial(223, 181, 124);
+
 	sphere(100);
 
 
+//Nose
+  	push();
+	//translate(20,40,84);
+	//rotateX(670);
+  	//rotateZ(-700);
+  	rotateX(PI*0.45);
+  	translate(0, 120, 0);
+  	cone(40, 70);
+  	pop();
 
+  	ambientMaterial(158, 120, 68);
+	//
 	push();
 	translate(-85,-85,-0);
 	rotateX(1150);
@@ -53,12 +66,21 @@ class Particle {
   	cone(40, 70);
   	pop();
 
+  	ambientMaterial(255, 255, 255);
+  	noStroke();
+
+  	//Left eye
   	push();
-	translate(20,40,84);
-	rotateX(670);
-  	rotateZ(-700);
-  	cone(40, 70);
+  	translate(50, -50, 90);
+  	torus(20, 10);
   	pop();
+
+  	//Right eye
+  	push();
+  	translate(-50, -50, 90);
+  	torus(20, 10);
+  	pop();
+
 		
 
 		for (let x = -5; x < 5; x += 1.5) {
